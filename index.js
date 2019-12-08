@@ -12,10 +12,16 @@ function getDogImage() {
 
 function displayResults(responseJson) {
   console.log(responseJson);
-  $('.results-img').replaceWith(
-    responseJson.message.forEach(
-      x => `<img src="${responseJson.message[x]}" class="results-img">`));
-  //display the results section
+
+  $('.results').empty();
+  $('.results').append(`<h2>Your results!</h2>`);
+  // $('.results').append(
+  //   // responseJson.message.forEach(
+  //   //   x => `<img src="${responseJson.message[x]}" class="results-img">`));
+  for (let i = 0; i < responseJson.message.length; i++){
+    $('.results').append(
+      `<img src="${responseJson.message[i]}" class="results-img">`
+    )}
   $('.results').removeClass('hidden');
 }
 

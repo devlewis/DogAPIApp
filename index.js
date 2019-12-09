@@ -14,7 +14,6 @@ function getDogImage() {
 
 function displayResults(responseJson) {
   console.log(responseJson);
-
   $('.results').empty();
   $('.results').append(`<h2>Your results!</h2>`);
   for (let i = 0; i < responseJson.message.length; i++){
